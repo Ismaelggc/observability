@@ -122,10 +122,11 @@ Password: admin
 
 You will be prompted to change the password on first login.
 
-[Login-change](./screenshots/Login-change)
+<p align="center">
+  <img src="./screenshots/Login-change.png" width="400"/>
+</p>
 
-
-## Use Cases
+# Use Cases
 
 Learning DevOps and observability fundamentals
 
