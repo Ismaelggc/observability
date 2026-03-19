@@ -178,7 +178,7 @@ Inside Grafana:
 </p>
 
 8. Logs
-
+  
   - Go to Drilldown
 
   - Click on Logs
@@ -186,6 +186,10 @@ Inside Grafana:
 <p align="center">
   <img src="stack-monitoring/screenshots/Logs.png" width="800"/>
 </p>
+
+
+> The Nginx container is used to simulate a real application and generate logs that can be explored in Grafana via Loki.
+
 
 ## Configuration Notes
 
