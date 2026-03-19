@@ -19,17 +19,17 @@ This setup is commonly used in modern DevOps and cloud-native environments.
 
 The system is composed of the following components: 
 
-Prometheus scrapes metrics from Node Exporter
+* Prometheus scrapes metrics from Node Exporter
 
-Node Exporter exposes host system metrics (CPU, memory, disk, etc.)  
+* Node Exporter exposes host system metrics (CPU, memory, disk, etc.)  
 
-Loki stores and indexes logs  
+* Loki stores and indexes logs  
 
-Promtail collects logs from Docker containers and sends them to Loki  
+* Promtail collects logs from Docker containers and sends them to Loki  
 
-Grafana connects to Prometheus and Loki to visualize metrics and logs  
+* Grafana connects to Prometheus and Loki to visualize metrics and logs  
 
-Nginx acts as a sample service whose logs are monitored  
+* Nginx acts as a sample service whose logs are monitored  
 
 ```mermaid  
 
@@ -53,17 +53,17 @@ flowchart LR
 
 ## Features
 
-📈 Real-time system metrics monitoring
+* Real-time system metrics monitoring
 
-📉 Custom dashboards with Grafana
+* Custom dashboards with Grafana
 
-🧾 Centralized log aggregation with Loki
+* Centralized log aggregation with Loki
 
-🔍 Log exploration and filtering
+* Log exploration and filtering
 
-🐳 Docker-native logging integration
+* Docker-native logging integration
 
-⚙️ Easily extendable architecture
+* Easily extendable architecture
 
 
 ## 📁 Project Structure
@@ -189,21 +189,21 @@ Inside Grafana:
 
 # Use Cases
 
-Learning DevOps and observability fundamentals
+- Learning DevOps and observability fundamentals
 
-Monitoring local development environments
+- Monitoring local development environments
 
-Building a homelab setup
+- Building a homelab setup
 
-Demonstrating skills for technical interviews
+- Demonstrating skills for technical interviews
 
-Base architecture for production systems
+- Base architecture for production systems
 
 ## ⚠️ Notes
 
-Volumes are used for data persistence
+* Volumes are used for data persistence
 
-Do not commit sensitive data or credentials
+* Do not commit sensitive data or credentials
 
 Ensure ports are available before running
 
