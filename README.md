@@ -81,7 +81,6 @@ promtail-config.yml
 
 ```
 
-PromtailPromtail
 ## ⚡ QuickStart
 
 1. Clone the repository
