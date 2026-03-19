@@ -1,4 +1,4 @@
-# 📊 Observability Stack with Docker (Prometheus + Grafana + Loki)
+# Observability Stack with Docker (Prometheus + Grafana + Loki)
 
 ## Overview 
 
@@ -15,7 +15,7 @@ It includes:
 
 This setup is commonly used in modern DevOps and cloud-native environments.
 
-## 🧩 Architecture
+## Architecture
 
 The system is composed of the following components: 
 
@@ -66,7 +66,7 @@ flowchart LR
 * Easily extendable architecture
 
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 .
@@ -81,7 +81,7 @@ promtail-config.yml
 
 ```
 
-## ⚡ QuickStart
+## QuickStart
 
 1. Clone the repository
 
@@ -223,7 +223,7 @@ Inside Grafana:
 
 * Base architecture for production systems
 
-## ⚠️ Notes
+## Notes
 
 * Volumes are used for data persistence
 
