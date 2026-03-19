@@ -78,7 +78,6 @@ promtail-config.yml
 │   └── index.html
 |   └── images
 ├── screenshots/
-└── README.md
 
 ```
 
@@ -123,8 +122,59 @@ Password: admin
 You will be prompted to change the password on first login.
 
 <p align="center">
-  <img src="./screenshots/Login-change.png" width="400"/>
+  <img src="stack-monitoring/screenshots/Login-change.png" width="400"/>
 </p>
+
+6. Configure data sources in Grafana
+
+Inside Grafana:
+
+Go to Connections → Data Sources
+
+Add:
+
+- Prometheus URL: http://prometheus:9090
+
+- Loki URL: http://loki:3100
+
+<p align="center">
+  <img src="stack-monitoring/screenshots/DataSourceProm.png" width="800"/>
+</p>
+
+Importing a Dashboard in Grafana
+
+Instead of creating dashboards from scratch, you can import pre-built ones.
+
+Go to Grafana → Dashboards
+
+Click New → Import
+
+<p align="center">
+  <img src="stack-monitoring/screenshots/Importdashboards.png" width="800"/>
+</p>
+
+Go to Grafana Dashboard Gallery
+
+Select Nede Exporter Full
+
+<p align="center">
+  <img src="stack-monitoring/screenshots/Dashboard-pull.png" width="800"/>
+</p>
+
+This is a popular Node Exporter Full dashboard
+
+Copy the dashboard ID
+
+Click Load
+
+Select your Prometheus data source
+
+Click Import
+
+<p align="center">
+  <img src="stack-monitoring/screenshots/Dashborad.png" width="800"/>
+</p>
+
 
 # Use Cases
 
