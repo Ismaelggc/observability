@@ -187,17 +187,37 @@ Inside Grafana:
   <img src="stack-monitoring/screenshots/Logs.png" width="800"/>
 </p>
 
-# Use Cases
+## Configuration Notes
 
-- Learning DevOps and observability fundamentals
+* The configuration files included in this project (Prometheus, Loki, Promtail, etc.) are based on standard and reusable configurations commonly used in real-world environments.
 
-- Monitoring local development environments
+* They are designed to work out-of-the-box for local setups
 
-- Building a homelab setup
+* They can be easily adapted for more complex infrastructures
 
-- Demonstrating skills for technical interviews
+* They follow common best practices from official documentation
 
-- Base architecture for production systems
+* This means you can reuse and extend them for:
+
+  - Other Docker-based projects
+
+  - Microservices architectures
+
+  - Cloud or Kubernetes environments
+
+* Treat these configurations as a baseline, not a limitation — they are meant to evolve with your needs.
+
+## Use Cases
+
+* Learning DevOps and observability fundamentals
+
+* Monitoring local development environments
+
+* Building a homelab setup
+
+* Demonstrating skills for technical interviews
+
+* Base architecture for production systems
 
 ## ⚠️ Notes
 
@@ -205,5 +225,5 @@ Inside Grafana:
 
 * Do not commit sensitive data or credentials
 
-Ensure ports are available before running
+* Ensure ports are available before running
 
