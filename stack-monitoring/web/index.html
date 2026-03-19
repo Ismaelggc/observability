@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px;
+  border-bottom: 1px solid #cccccc; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+
+figure figcaption {
+  text-align: center;
+  font-size: 12px;
+}
+
+</style>
+</head>
+<body>
+<div class="document">
+<div class="header"></div><div class="inner">
+<h2 id="toc_1">Sintaxis básica</h2>
+
+<p>Curso de sintáxis básica de Markdown.</p>
+
+<h3 id="encabezado">Encabezado</h3>
+
+<p>Podemos tener encabezados h1 o h2 dependiendo si usamos # o ##. Cómo podemos ver al principio tenemos un encabezado h1.<br>
+Mientras que el segundo es un encabezado h2.</p>
+
+<h3 id="toc_1.1">Negritas y <em>cursiva</em></h3>
+
+<p>Para usar negritas tenemos que escribir dentro de ** nuestro texto ** y para cursivas usamos * nuestro texto *. También podemos escribir<br>
+en negritas y cursivas usando *** nuestro texto ***. <strong><em>Prueba de negrita y cursiva</em></strong>.</p>
+
+<h3 id="toc_1.2">Código</h3>
+
+<p>Si queremos escribir código usaremos las comillas invertidas.
+ Vamos a poner un ejemplo de como nos moveríamos entre directorios en Linux usando <code>cd ..</code>.</p>
+
+<p>Si quisieramos usar código que incluya comillas invertidas tendríamos que usar comillas invertidas dobles <code>MYSQL_ROOT_PASSWORD=`DevPass123!`</code></p>
+
+<p>También podremos crear bloques de código usando comillas invertidas triples.</p>
+
+<pre><code>cd Documentos;  
+ls -a;  
+mkdir Nueva Carpeta
+</code></pre>
+
+<p>En este ejemplo, podemos ver como crea una visualización del bloque de código.</p>
+
+<h3 id="toc_1.3">Enlaces</h3>
+
+<p>Para crear enlaces usamos los corchetes [] y los paréntesis(). En los corchetes escribimos el texto que aparecerá y en los paréntesis el hiperenlace. Este sería un ejemplo para <a href="https://google.com">Google.com</a>.</p>
+
+<p>También puede usarse para dirigirnos a secciones del propio texto. <a href="#Sintaxis%20b%C3%A1sica">Sintaxis básica</a>.</p>
+
+<p>Esto puede usarse para correos electrónicos usando &lt; &gt; <a href="mailto:ismaelgutierrez1990@gmail.com">ismaelgutierrez1990@gmail.com</a>. Ademáse se pueden crear enlaces a una url más rápidamente <a href="https://www.google.com">https://www.google.com</a>.</p>
+
+<h3 id="toc_1.4">Títulos a los enlaces</h3>
+
+<p>Puedes agregar un título al enlace agregando un comentario al final del mismo entre comillas dobles. Este aparecerá si pasamos el ratón encima del enlace <a href="https://google.com" title="Enlace a la página principal de Google">Google</a>.</p>
+
+<h3 id="toc_1.5">Formato enlace</h3>
+
+<p>Al igual que con el texto normal, podemos agregar formato a los enlaces usando las mismas marcas * ** ***. Podemos ver que el enlace a <strong><em><a href="https://google.com">Google</a></em></strong> ahora aparece en negrita y cursiva.</p>
+
+<h3 id="toc_1.6">Enlaces a referencias</h3>
+
+<p>Esto es un tipo especial de enlace consta de dos elementos que van entre corchetes. El primero muestra el texto que se va a mostrar y el segundo es el identificador de referencia a enlazar.
+Aquí hemos creado una <a href="https://google.com">Referencia</a> usando Google.com.</p>
+
+<h3 id="toc_1.7">Imágenes</h3>
+
+<p>Para usar imágenes tenemos que usar el signo de ! seguido de corchetes para el texto de la imagen y comillas para su url (ya sea online o una ruta de nuestro equipo).</p>
+
+<p><a href="/home/mael/CodeArts-Solutions/Sprint2/Monitoreovideos/Grafana+Loki+Prometheus+Promtail/web/images/"><img src="images/Ciudad-Cyberpunk.jpg"></a></p>
+<p>Podemos agregar un título a la imagen incluyéndolo entre comillas después de escribir la ruta de la imagen.<br>
+Por lo que nuestro código quedaría así:  </p>
+
+<p><code>![ nombre de la imagen ] ( ruta &quot;título&quot;)</code></p>
+
+<h3 id="toc_1.8">Imagen con enlace</h3>
+
+<p>Para agregar un enlace a la imágen tenemos que rodear el código de Markdown con corchetes y agregar un enlace entre paréntesis</p>
+
+<p>Quedando nuestro código de la siguiente forma:  </p>
+
+<p><code>[ ! [ nombre de la imagen ] ( ruta &quot;título&quot;) ] (enlace)</code></p>
+
+<h3 id="toc_1.9">Citas</h3>
+
+<p>Para agregar citas con Markdwon usamos &gt; justo delante de la línea que queramos usar como cita</p>
+
+<blockquote>
+<p>Esto es un ejemplo de cita</p>
+</blockquote>
+
+<p>Se pueden anidar citas agregando &gt; al inicio de la línea.</p>
+
+<blockquote>
+<p>Esto es un ejemplo de cita.</p>
+
+<blockquote>
+<p>Aquí hay otro de una cita anidada.</p>
+</blockquote>
+</blockquote>
+
+<p>Las citas pueden tener cualquier elemento de Markdown, sólo tenemos que usar el código que usamos normalmente.</p>
+
+<blockquote>
+<h3 id="toc_1.10">Este es el título de la cita</h3>
+
+<p>Ahora voy a escribir en <strong>negrita</strong> y en <em>cursiva</em>.<br>
+Para acabar voy a crear un enlace para <a href="https://google.com">Google</a>.</p>
+</blockquote>
+
+<h3 id="toc_1.11">Listas</h3>
+
+<p>Para agregar una lista tenemos que agregar un 1 seguido de un punto y un espacio. Aunque el orden de los indices no es diferencial, siempre tiene que empezar por el número 1.</p>
+
+<ol dir="auto">
+<li>Primero<br></li>
+<li>Segundo<br></li>
+<li>Tercero</li>
+</ol>
+
+<p>Esta es la lista numerada, Podemos crear una lista usando astericos o guiones, pero se deben mantener a lo largo de la lista y no ir cambiado en cada elemento.</p>
+
+<ul dir="auto">
+<li>Primero<br></li>
+<li>Segundo<br></li>
+<li>Tercero</li>
+</ul>
+
+<p>También podemos anidar listas usando cuatro espacio o le tabulador.</p>
+
+<ol dir="auto">
+<li>Primero<br></li>
+<li>Segundo<br>
+
+<ul dir="auto">
+<li>Primero<br></li>
+<li>Segundo<br></li>
+</ul></li>
+</ol>
+
+<p>También se pueden añadir elementos e imágenes en las listas, para ello tendremos que dejar un espacio entre líneas en blanco e incluir lo que queramos.</p>
+
+<ol dir="auto">
+<li>Primero</li>
+<li><p>Segundo</p>
+
+<p><a href="https://google.com">Google.com</a></p>
+
+<pre><code>cd Documentos;  
+ls -a;  
+mkdir Nueva Carpeta
+</code></pre></li>
+<li><p>Tercero </p></li>
+</ol>
+
+<h3 id="toc_1.12">Código HTML</h3>
+
+<p>Podemos agregar diréctamente código HTML ya qué la mayoría de editores y procesadores de Markdown soportan HTML. Sin embargo siempre es interesante consultar el manual para cada caso específico.<br>
+Podemos resaltar un texto  en negritas usando ** palabra ** o usando &lt;strong&gt;palabra&lt;/strong&gt;. Hemos conseguido visualizar el código gracias a que hemos usado \ delante del mismo.</p>
+
+<h3 id="toc_1.13">Tablas</h3>
+
+<p>Aquí vamos a crear tablas usando el símbolo | y los guiones para definir la cabecera de las columnas.<br>
+Si queremos crear una rabla quedaría algo así:  </p>
+
+<pre><code>| Cabecera1| |Cabecera2|
+| -------- | | ------- |
+| Elem 1 , 1 | | Elem 1, 2 |
+</code></pre>
+
+<table dir="auto">
+<thead>
+<tr>
+<th style="text-align: center">Nombre</th>
+<th style="text-align: center">Apellido</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">Ismael</td>
+<td style="text-align: center">Gutierrez</td>
+</tr>
+</tbody>
+</table>
+
+<p>Usaremos el doble punto en el separador de la cabecera para indicar dónde queremos alinear la tabla. Si queremos alinear a la izquierda usaremos <strong>:----</strong> , para centrado <strong>:------:</strong> y para la derecha <strong>-----:</strong>.</p>
+
+<h3 id="toc_1.14">Texto tachado</h3>
+
+<p>Para tachar texto usaremos doble guión ondulado delante y detrás de la palabra que queramos tachar. <del>Esto es un ejemplo de texto tachado</del></p>
+
+<h3 id="toc_1.15">Notas al pie de página</h3>
+
+<p>Podemos agregar notas al pie de página usando el código [^id]. Estos identificadores pueden contener número y letras, pero nunca espacios. Una vez señalada dónde quieres hacer la nota a pie de página tendremos que escribir el código seguido de dos puntos y esta referencia aparecerá en el pié de página.<br>
+<strong><em>Esto es una referencia para crear la nota a pie de página<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup></em></strong></p>
+
+<p>Aunque en el archivo Markdown la referencia está escrita juto debajo, en el renderizado aparecerá en el pie de página.</p>
+
+<h3 id="toc_1.16">Resaltado de sintaxis</h3>
+
+<p>La mayoria de editores Markdown soportan el resaltado de código. Para ello tenemo que indicar el lenguaje después de la triple comilla inversa de apertura de un bloque de código.</p>
+
+<pre><code class="language-javascript">const value = 3
+let result = value * 4;
+</code></pre>
+
+<h3 id="toc_1.17">Ids de cabeceras</h3>
+
+<p>Podemos identificar los encabezados en Markdown usando el atributo id. Para añadir este atributo tenemos que usar un identificador personalizado entre llaves. El identificador tendrá que empezar por el carácter #. Un ejemplo para nuestro código quedarí así:  </p>
+
+<p><code>## Cabecera {#id-encabezado}</code>  </p>
+
+<p>Este encabezado puede ser enlazada tanto en el documento Markdown como en otras páginas creando un enlace normal y usando el id del encabezado quedando así</p>
+
+<p><code>[Encabezado](#id-encabezado)</code>  </p>
+
+<p>Esto depende de cada editor, en mi caso estoy usando Marker por lo que al no ser compatible con esta instrucción he tenido que hacerlo mediante código html <code>&lt;h3 id=&quot;encabezado&quot;&gt;Encabezado&lt;/h3&gt;</code>.  </p>
+
+<p>Este es un ejemplo de como al pulsar en <a href="#encabezado">Encabezado</a></p>
+
+<div class="footnotes">
+<hr>
+<ol>
+
+<li id="fn1">
+<p>Aquí estaría la nota a pie de página.&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+</li>
+
+</ol>
+</div>
+</div>
+</div>
+<script>renderMathInElement(document.body);</script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>
